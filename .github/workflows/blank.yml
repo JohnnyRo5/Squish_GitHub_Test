@@ -18,7 +18,7 @@ jobs:
         with:
           report_paths: '**/reports/xml/*.xml'
           
-      - name: Upload Artifacts
+      - name: Test results
         if: success() || failure()
         uses: actions/upload-artifact@v2
         with:
