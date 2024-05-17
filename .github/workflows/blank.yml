@@ -22,6 +22,6 @@ jobs:
         if: success() || failure()
         uses: actions/upload-artifact@v2
         with:
-          name: My Artifacts
+          name: Test reports
           path: |
             ${{ github.workspace }}/reports/
