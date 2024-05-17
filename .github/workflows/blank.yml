@@ -9,10 +9,8 @@ jobs:
       - uses: actions/checkout@v1
 
       - name: Run addressbook tests
-        shell: cmd
         run: C:\Users\john_\Squish_for_Qt_6.7.2\bin\squishrunner.exe --testsuite suite_ADF_test --local --exitCodeOnFail 13 --reportgen junit,reports/xml/junit_report.xml --reportgen html,reports/web_report
-        
-        
+              
       - name: Publish Test Report
         uses: mikepenz/action-junit-report@v3
         if: success() || failure()
