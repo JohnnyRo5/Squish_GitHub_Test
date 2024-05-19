@@ -17,7 +17,13 @@ jobs:
         if: success() || failure()
         with:
           report_paths: '**/reports/xml/*.xml'
-          
+
+      - name: HTML Preview
+        id: html_preview
+        uses: pavi2410/html-preview-action@v2
+        with:
+          html_file: 'index.html'
+    
       - name: Test results
         if: success() || failure()
         uses: actions/upload-artifact@v2
