@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Run addressbook tests
-        run: C:\Squish_for_Qt 6.7.2\bin\squishrunner.exe --testsuite suite_ADF_test --local --exitCodeOnFail 13 --reportgen junit,reports/xml/junit_report.xml --reportgen html,reports/web_report
+        run: C:\Squish_for_Qt 6.7.2\bin\squishrunner.exe --testsuite suite_captures --testcase tst_captures_tests_in_BDD --local --exitCodeOnFail 13 --reportgen junit,reports/xml/junit_report.xml --reportgen html,reports/web_report
         shell: cmd
          
       - name: Publish Test Report
