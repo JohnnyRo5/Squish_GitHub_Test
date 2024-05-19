@@ -26,21 +26,23 @@ jobs:
           path: |
             ${{ github.workspace }}/reports/
 
-      - name: Deploy static content to Pages
-        env:
-               name: github-pages
-               url: ${{ steps.deployment.outputs.page_url }}
-               runs-on: self-hosted
-                steps:
-                - name: Checkout
-                  uses: actions/checkout@v4
-                - name: Setup Pages
-                  uses: actions/configure-pages@v5
-                - name: Upload artifact
-                  uses: actions/upload-pages-artifact@v3
-                  with:
-                   # Upload entire repository
-                  path: './reports/web_report'
-                - name: Deploy to GitHub Pages
-                  id: deployment
-                  uses: actions/deploy-pages@v4
+  job-1:
+    runs-on: ubuntu-latest
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload entire repository
+          path: './reports/web_report'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
