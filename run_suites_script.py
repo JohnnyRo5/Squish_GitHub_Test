@@ -31,18 +31,8 @@ def run_squish_tests(suites_list):
         print(squish_runner)
         path_elements = suite.split(os.sep)
         report_name = path_elements[-1][6:]
-        subprocess.call(
-            [
-                squish_runner,
-                "--debugLog",
-                "alpw",
-                "--testsuite",
-                suite,
-                "--reportgen",
-                "junit," + xml3_reports_path + "\\" + report_name+"\\results.xml",
-                "--reportgen",
-                "html," + html_reports_path
-            ])
+        subprocess.check_output(f"{squish_runner} --testsuite {suite} --local --exitCodeOnFail 13 --reportgen junit,reports/xml/{report_name}.xml --reportgen html,reports/web_report"
+,shell=True)
 
 if __name__ == "__main__":
     suites = get_suites_paths(SUITES_DIR_PATH)
