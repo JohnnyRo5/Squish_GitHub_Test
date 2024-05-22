@@ -71,7 +71,7 @@ def run_squish_tests(suites_list,xml3_reports_path,html_reports_path):
                 "--testsuite",
                 suite,
                 "--reportgen",
-                "junit," + xml3_reports_path + "\\" + report_name+".xml",
+                "xmljunit," + xml3_reports_path + "\\" + report_name+".xml",
                 "--reportgen",
                 "html," + html_reports_path
             ])
