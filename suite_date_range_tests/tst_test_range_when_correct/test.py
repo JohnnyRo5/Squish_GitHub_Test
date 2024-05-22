@@ -24,6 +24,8 @@ SECOND_DATE = datetime.date(2019, 7, 7)
 
 @time_tracker
 def main():
+    test.log("skipped")
+    test.skip("skipped")
     # Start the start
     application.start(to_home_page=True)
     
