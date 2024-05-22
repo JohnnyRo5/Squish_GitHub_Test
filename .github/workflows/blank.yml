@@ -31,4 +31,8 @@ jobs:
           name: HTML report
           path: |
             C:\Report\results\
-              
+
+      - name: Send google chat message with results
+        run: |
+            python announce_results.py
+
