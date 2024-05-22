@@ -34,5 +34,5 @@ jobs:
 
       - name: Send google chat message with results
         run: |
-            python announce_results.py
+            python google_chat.py
 
