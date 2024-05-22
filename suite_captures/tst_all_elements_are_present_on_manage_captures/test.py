@@ -34,6 +34,6 @@ def main():
     captures = ["Anti-Forensics Traces", "CE - Keywords in Filenames", "Emails", "Database Files", "Referenced Files", "Domestic Security", "Audio Files", "Calendar", "Bookmarks"]
     snooze(0.5)
     for capture_group, capture in zip(capture_groups, captures):
-        click(ManageCaptures.capture_groups(capture_group))
+        xclick(ManageCaptures.capture_groups(capture_group))
         test.verify(is_visible(ManageCaptures.captures(capture)))
         
