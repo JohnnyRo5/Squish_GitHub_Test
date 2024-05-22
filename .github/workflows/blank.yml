@@ -13,7 +13,7 @@ jobs:
         shell: cmd
          
       - name: Publish new framework test results
-        uses: EnricoMi/publish-unit-test-result-action/composite@v2
+        uses: EnricoMi/publish-unit-test-result-action/windows@v2
         if: always()
         with:
           files: |
