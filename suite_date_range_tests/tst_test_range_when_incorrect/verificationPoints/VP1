@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<VerificationPoint type="Screenshot" version="4">
+<Description/>
+<Verification object="launcherQmlView_monthTextField_TextField" options="12" type="PNG">iVBORw0KGgoAAAANSUhEUgAAACMAAAAcCAMAAADcK/YTAAAA51BMVEWuzeyvqcSwuMuxucS5u9i6y+m7t7a8t8G80++9uNC91fG/xL3A2vPA3eHB3fXCvcrC4/nDt8rDuc7G393G5vjG5vrH5/vLucfMusjM5+nOuL/Y8v/av73d9v/hwrjh+P/kx7Xk+f/mxKnmxrXmxrfmx7rm+//nxrTo+//rzLfr+unr///sz7ru/f/v+v/x17/z///0+f/13sH38/X5/v/69fD7///868/8///93p/97s/+8dT+/v/+////9Nj/9dv/+OH/++j//On//v3//v7//+r///X///j///n///v///z///7////AkeoUAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAvUlEQVQokeXSxQ7CQBCA4eLu7l7c3V0K8/7PA1ud6QUOHEjoYXf/5kvaZJaD9w/3z6YjbuO+3PfhiAYzTbYKRW4mvV4YeBLat4SKKScebnkjTwKZssu5ZoeNzceTQKYUCtTYD9Q9cZ4ENuGW97Xvgg1mUGAT2Tra8Oi6D8ygwCYqVP2wjxVEg4IYWJp7A/taMlpQc80mkhmQjRrUwNRqmShGDZ25pFOgGiXQTI8rZYAnXQCcP5j7/Ofu4ZfME2IhAfcqo+xVAAAAAElFTkSuQmCC<Mask/>
+</Verification>
+</VerificationPoint>

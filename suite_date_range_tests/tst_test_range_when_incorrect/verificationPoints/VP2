@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<VerificationPoint type="Screenshot" version="4">
+<Description/>
+<Verification object="launcherQmlView_dayTextField_TextField" options="12" type="PNG">iVBORw0KGgoAAAANSUhEUgAAACMAAAAcCAMAAADcK/YTAAAAsVBMVEWora+qpqmsra+st9OtrKuvr660t9a1wNG3xcm3yOa3y+G72PK+uLLAtc3C4PXDtMfGs8PG5vvHsrDHxcLH5/vH5/zJycjPt7rU8P7j+v/k9PzmxbTmxq7mxrXn/P/oyrTq0rnr/f/r///u7u7u8PLu/P/v+v/z/f/z///09/v548b579369e/7///9/f39///+79D+/v//+N7/+uP/++v//Of//vn//v3///v///7///+NUq+GAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAkElEQVQokWOwIgwYRrIaNShDR1lZRVMfnQlRowShLaQ5xIR5GLnUUZiodlnIigBJMwVmVWQmuhpRMCXPjczEqsbKgE0DiYldjTG/HBITuxpTAUkkJnY1RryKSEzsarQ4dZGYWNWYiEsgM9HVCFpZWWoL8aEw0dTIMLCyMLFLoTJR1ViZ6+kZYjJR1eABw1UNAAU6zNmmgFMoAAAAAElFTkSuQmCC<Mask/>
+</Verification>
+</VerificationPoint>
