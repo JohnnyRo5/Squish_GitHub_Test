@@ -22,7 +22,6 @@ jobs:
           include_passed : true
           check_annotations : true
           test_files_prefix : true
-          annotate_notice : true 
           follow_symlink : true
                 
       - name: Test results
