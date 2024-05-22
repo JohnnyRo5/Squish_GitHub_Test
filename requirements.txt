@@ -1,0 +1,11 @@
+configparser
+junit-xml
+playwright==1.37.0
+pytest==7.3.1
+psutil
+tzdata
+junit_xml==1.9
+junitparser==3.1.2
+lxml==5.2.2
+psutil==5.9.8
+Requests==2.32.2
