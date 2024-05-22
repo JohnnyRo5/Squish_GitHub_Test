@@ -20,15 +20,19 @@ jobs:
           summary: true
           detailed_summary : true
           include_passed : true
-          check_name : true
           check_annotations : true
           test_files_prefix : true
+          follow_symlink : true
                 
       - name: Test results
         if: success() || failure()
         uses: actions/upload-artifact@v4
         with:
-          name: Test reports
+          name: HTML report
           path: |
             C:\Report\results\
-              
+
+      - name: Send google chat message with results
+        run: |
+            python announce_results.py
+
