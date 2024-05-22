@@ -1,6 +1,5 @@
 import os
 from xml.dom.minidom import parse
-import junitparser
 from junitparser import TestCase, TestSuite, JUnitXml, Skipped, Error, Attr ,TestCase, Attr, IntAttr, FloatAttr,Element
 from lxml.etree import XMLParser, parse
 
