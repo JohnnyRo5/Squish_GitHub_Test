@@ -17,7 +17,7 @@ skipped_suites = [
     'suite_audit_trail',
     'suite_captures',
     'suite_cky_creation_tests',
-    #'suite_date_range_tests',
+    'suite_date_range_tests',
     'suite_export_tests',
     'suite_filtering',
     'suite_imaging',
