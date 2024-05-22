@@ -1,6 +1,0 @@
-configparser
-junit-xml
-playwright==1.37.0
-pytest==7.3.1
-psutil
-tzdata
