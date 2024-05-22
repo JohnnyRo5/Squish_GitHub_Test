@@ -48,9 +48,11 @@ def convert_test_results(src_result_path,dst_result_path):
         xml.__setattr__("skipped",number_of_skipped_tests)
         class CustomElement(Element):
             _tag = 'skipped'
-            foo = Attr()
-            bar = Attr()
+            type = Attr('skipped')
+            message =Attr("skipped")
         custom = CustomElement()
+        custom.type='skipped'
+        custom.message='skipped'
         xml.append(custom)
         #
         # # save new xml that has skipped attribute to new location
