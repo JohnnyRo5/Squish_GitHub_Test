@@ -20,7 +20,6 @@ jobs:
           summary: true
           detailed_summary : true
           include_passed : true
-          check_name : false
           check_annotations : true
           test_files_prefix : true
                 
