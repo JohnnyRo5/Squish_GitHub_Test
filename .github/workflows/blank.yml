@@ -12,13 +12,12 @@ jobs:
         run: python run_suites_script.py
         shell: cmd
          
-      - name: Publish new framework test results
-        uses: EnricoMi/publish-unit-test-result-action/windows/bash@v2
-        if: always()
+      - name: Publish Test Report
+        uses: mikepenz/action-junit-report@v3
+        if: success() || failure()
         with:
-          files: |
-            'C:/Report/results/final/*.xml'
-    
+          report_paths: 'C:/Report/results/final/*.xml'
+                
       - name: Test results
         if: success() || failure()
         uses: actions/upload-artifact@v4
