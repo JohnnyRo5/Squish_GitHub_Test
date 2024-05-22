@@ -15,9 +15,9 @@ FINAL_REPORTS_PATH = os.path.join("C:\\Report", "results", "final")
 skipped_suites = [
     'suite_1st_setup_app',
     'suite_audit_trail',
-    'suite_captures',
+    #'suite_captures',
     'suite_cky_creation_tests',
-    #'suite_date_range_tests',
+    'suite_date_range_tests',
     'suite_export_tests',
     'suite_filtering',
     'suite_imaging',
