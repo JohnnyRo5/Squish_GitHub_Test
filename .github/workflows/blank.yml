@@ -23,7 +23,7 @@ jobs:
           check_name : true
           check_annotations : true
           test_files_prefix : true
-          check_title_template : SUITE_NAME
+          check_title_template : ${{SUITE_NAME}}
                 
       - name: Test results
         if: success() || failure()
