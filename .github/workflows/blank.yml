@@ -21,7 +21,6 @@ jobs:
           detailed_summary : true
           include_passed : true
           check_name : true
-          check_title_template : true
                 
       - name: Test results
         if: success() || failure()
