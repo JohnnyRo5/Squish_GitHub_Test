@@ -46,6 +46,12 @@ def convert_test_results(src_result_path,dst_result_path):
         #
         # # set any attribute from testsuite header from xml report file
         xml.__setattr__("skipped",number_of_skipped_tests)
+        class CustomElement(Element):
+            _tag = 'skipped'
+            foo = Attr()
+            bar = Attr()
+        custom = CustomElement()
+        xml.append(custom)
         #
         # # save new xml that has skipped attribute to new location
         dst_file_path = dst_result_path + "\\" + suite
