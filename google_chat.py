@@ -37,13 +37,6 @@ if __name__ == '__main__':
             time += float(testsuite.attrib['time'])
     successes = total - errors - failures - skipped
     time_converted = strftime("%H:%M:%S", gmtime(time))
-    print(f'💻 *DESKTOP UI(DEI) TESTS* - {DATE}')
-    print(f'Successes: {successes}')
-    print(f'Total number of tests: {total}')
-    print(f'Errors: {errors}')
-    print(f'Failures: {failures}')
-    print(f'Skipped: {skipped}')
-    print(f'Total time: {time_converted}')
     # Post message to google chat
     headers = {'Content-Type': 'application/json; charset=UTF-8'}
     data = {
