@@ -12,11 +12,11 @@ jobs:
         run: python run_suites_script.py
         shell: cmd
          
-      - name: Publish Test Report
-        uses: mikepenz/action-junit-report@v4
-        if: success() || failure()
+      - name: HTML Preview
+        id: html_preview
+        uses: pavi2410/html-preview-action@v2
         with:
-          report_paths: '**/reports/xml/*.xml'
+          html_file: '${{ github.workspace }}/reports/web_report/index.html'
     
       - name: Test results
         if: success() || failure()
