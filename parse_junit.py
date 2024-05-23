@@ -23,13 +23,7 @@ def convert_test_results(src_result_path,dst_result_path):
         # Create the new element 'skipped'
         # and add custom attributes to it :
         # <skipped type="skipped" message="skipped"/>
-        class CustomElement(Element):
-            _tag = 'skipped'
-            type = Attr('skipped')
-            message =Attr("skipped")
-        custom = CustomElement()
-        custom.type='skipped'
-        custom.message='skipped'
+
 
         skipped = "skipped"
         number_of_skipped_tests = 0
@@ -45,9 +39,17 @@ def convert_test_results(src_result_path,dst_result_path):
                 #list_of_logs_from_report.append(log.text)
                 find_skipped = log.text
                 if skipped in find_skipped:
-                    print("Found!")
                     # if skipped found append new element 'skipped' to it
+                    class CustomElement(Element):
+                        _tag = 'skipped'
+                        type = Attr('skipped')
+                        message = Attr("skipped")
+
+                    custom = CustomElement()
+                    custom.type = 'skipped'
+                    custom.message = 'skipped'
                     testcase.append(custom)
+                    print("Found!")
                 number_of_skipped_tests += find_skipped.count(skipped)
         # count the total number of skipped tests ( use test.log("skipped") , test.skip(message) in squish tests )
         #for log in list_of_logs_from_report:
