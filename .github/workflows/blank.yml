@@ -17,7 +17,7 @@ jobs:
         if: success() || failure()
         with:
           report_paths: 'C:/Report/results/final/*.xml'
-          summary: true
+          summary: false
           detailed_summary : true
           include_passed : true
           check_annotations : true
