@@ -51,7 +51,7 @@ if __name__ == '__main__':
                 f'Duration ⏱️: _{time_converted}_\n'
     }
 
-    #response = requests.post(WEBHOOK, headers=headers, data=json.dumps(data))
+    response = requests.post(WEBHOOK, headers=headers, data=json.dumps(data))
     # if response.ok:
     #     print("Message posted.")
     # else:
