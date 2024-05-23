@@ -43,8 +43,8 @@ if __name__ == '__main__':
     headers = {'Content-Type': 'application/json; charset=UTF-8'}
     data = {
         'text': f'💻 *DESKTOP UI(DEI) TESTS* - {DATE}\n'
-                f'Number of Test Cases: _{total}_\n'
-                f'Number of Passes ✅: _{number_of_passes}_\n'
+                f'Total Number of Test Cases: _{total}_\n'
+                f'Number of verifications in Test Cases ✅: _{number_of_passes}_\n'
                 f'Number of Fails ❌: _{failures}_\n'
                 f'Number of Errors 🔥: _{errors}_\n'
                 f'Number of Skipped ⏭️: _{skipped}_\n'
