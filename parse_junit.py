@@ -20,32 +20,9 @@ def convert_test_results(src_result_path,dst_result_path):
 
         list_of_logs_from_report = []
 
-        # parse the XML to get to the <system-out> logs where all the information is stored (e.g. skipped tests )
-        for testcase in xml:
-            for log in testcase:
-                if log.text == None:
-                    continue
-                list_of_logs_from_report.append(log.text)
-
-        skipped = "skipped"
-        number_of_skipped_tests = 0
-        number_of_pass = 0
-
-        # count the total number of skipped tests ( use test.log("skipped") , test.skip(message) in squish tests )
-        for log in list_of_logs_from_report:
-            number_of_skipped_tests+=log.count(skipped)
-
-        # get total number of tests (is equal to number of PASS verifications in tests) ,skipped,failures,errors from squish generated xml report file
-        print(f"Number of skipped tests : {number_of_skipped_tests}")
-        print(f"Number of failures tests : {xml.failures}")
-        print(f"Number of errors tests : {xml.errors}")
-        print(f"Number of tests : {xml.tests}")
-        #
-        # # get any attribute from testsuite header from xml report file
-        #print(xml.__getattribute__("time"))
-        #
-        # # set any attribute from testsuite header from xml report file
-        xml.__setattr__("skipped",number_of_skipped_tests)
+        # Create the new element 'skipped'
+        # and add custom attributes to it :
+        # <skipped type="skipped" message="skipped"/>
         class CustomElement(Element):
             _tag = 'skipped'
             type = Attr('skipped')
@@ -53,7 +30,43 @@ def convert_test_results(src_result_path,dst_result_path):
         custom = CustomElement()
         custom.type='skipped'
         custom.message='skipped'
-        xml.append(custom)
+
+        skipped = "skipped"
+        number_of_skipped_tests = 0
+        number_of_testcases = 0
+
+        # parse the XML to get to the <system-out> logs where all the information is stored (e.g. skipped tests )
+        for testcase in xml:
+            number_of_testcases+=1
+            for log in testcase:
+                if log.text == None:
+                    continue
+                # search every log for skipped ( use test.log("skipped") , test.skip(message) in squish tests )
+                #list_of_logs_from_report.append(log.text)
+                find_skipped = log.text
+                if skipped in find_skipped:
+                    print("Found!")
+                    # if skipped found append new element 'skipped' to it
+                    testcase.append(custom)
+                number_of_skipped_tests += find_skipped.count(skipped)
+        # count the total number of skipped tests ( use test.log("skipped") , test.skip(message) in squish tests )
+        #for log in list_of_logs_from_report:
+        #    number_of_skipped_tests+=log.count(skipped)
+
+        # get total number of tests (is equal to number of PASS verifications in tests) ,skipped,failures,errors from squish generated xml report file
+        print(f"Number of Skipped tests : {number_of_skipped_tests}")
+        print(f"Number of Test Cases : {number_of_testcases}")
+        print(f"Number of Fails : {xml.failures}")
+        print(f"Number of Errors : {xml.errors}")
+        print(f"Number of Passes in one test : {xml.tests}")
+        #
+        # # get any attribute from testsuite header from xml report file
+        #print(xml.__getattribute__("time"))
+        #
+        # # set any attribute from testsuite header from xml report file
+        xml.__setattr__("skipped",number_of_skipped_tests)
+
+        xml.__setattr__("hostname", number_of_testcases)
         #
         # # save new xml that has skipped attribute to new location
         dst_file_path = dst_result_path + "\\" + suite

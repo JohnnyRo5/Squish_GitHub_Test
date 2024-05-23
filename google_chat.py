@@ -23,6 +23,7 @@ if __name__ == '__main__':
     skipped = 0
     successes = 0
     time = 0
+    number_of_passes=0
 
     # Get test results from xml files
     for filename in os.listdir(FILE_PATH):
@@ -30,7 +31,8 @@ if __name__ == '__main__':
             fullname = os.path.join(FILE_PATH, filename)
             testsuites = ET.parse(fullname)
             testsuite = testsuites.getroot()
-            total += int(testsuite.attrib['tests'])
+            number_of_passes += int(testsuite.attrib['tests'])
+            total += int(testsuite.attrib['hostname'])
             errors += int(testsuite.attrib['errors'])
             failures += int(testsuite.attrib['failures'])
             skipped += int(testsuite.attrib['skipped'])
@@ -41,12 +43,12 @@ if __name__ == '__main__':
     headers = {'Content-Type': 'application/json; charset=UTF-8'}
     data = {
         'text': f'💻 *DESKTOP UI(DEI) TESTS* - {DATE}\n'
-                f'Total number of tests: _{total}_\n'
-                f'Passed ✅: _{successes}_\n'
-                f'Failed ❌: _{failures}_\n'
-                f'Errors 🔥: _{errors}_\n'
-                f'Skipped ⏭️: _{skipped}_\n'
-                f'Total time ⏱️: _{time_converted}_\n'
+                f'Number of Test Cases: _{total}_\n'
+                f'Number of Passes ✅: _{number_of_passes}_\n'
+                f'Number of Fails ❌: _{failures}_\n'
+                f'Number of Errors 🔥: _{errors}_\n'
+                f'Number of Skipped ⏭️: _{skipped}_\n'
+                f'Duration ⏱️: _{time_converted}_\n'
     }
 
     #response = requests.post(WEBHOOK, headers=headers, data=json.dumps(data))
