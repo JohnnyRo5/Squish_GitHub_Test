@@ -17,7 +17,7 @@ jobs:
         if: success() || failure()
         with:
           report_paths: 'C:/Report/results/final/*.xml'
-          summary: false
+          summary: true
           detailed_summary : true
           include_passed : true
           check_annotations : true
@@ -28,7 +28,7 @@ jobs:
         if: success() || failure()
         uses: actions/upload-artifact@v4
         with:
-          name: HTML report
+          name: Tests report
           path: |
             C:\Report\results\
 
