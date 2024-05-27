@@ -24,7 +24,7 @@ jobs:
           test_files_prefix : true
           follow_symlink : true
           update_check : true
-          check_name : true
+          check_name : false
           check_title_template: '{{SUITE_NAME}}'
                 
       - name: Test results
