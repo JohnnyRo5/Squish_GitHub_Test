@@ -22,7 +22,7 @@ jobs:
           include_passed : false
           check_annotations : true
           test_files_prefix : true
-          follow_symlink : false
+          follow_symlink : true
           update_check : true
                 
       - name: Test results
