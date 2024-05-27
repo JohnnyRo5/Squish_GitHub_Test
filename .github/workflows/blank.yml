@@ -23,6 +23,8 @@ jobs:
           check_annotations : true
           test_files_prefix : true
           follow_symlink : true
+          annotate_notice : true
+          update_check : true
                 
       - name: Test results
         if: success() || failure()
