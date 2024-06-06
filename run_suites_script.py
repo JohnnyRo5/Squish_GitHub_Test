@@ -52,7 +52,11 @@ def run_squish_tests(suites_list,xml3_reports_path,html_reports_path):
     squish_runner = os.path.join(SQUISH_BIN_FOLDER_PATH, "squishrunner")
 
     # Run squish server
-    subprocess.call([squish_server, "--verbose"])
+    logfile = open('C:\\0\\logfile.log', 'w')
+    proc=subprocess.Popen([squish_server, "--verbose"],stdout=subprocess.PIPE, stderr=subprocess.STDOUT,universal_newlines=True)
+    for line in proc.stdout:
+        sys.stdout.write(line)
+        logfile.write(line)
 
     print(f"\nSUCCESSFULLY ADDED SUITES LIST: {suites_list}\n")
     for suite in suites_list:
