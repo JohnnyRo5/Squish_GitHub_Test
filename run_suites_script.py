@@ -48,11 +48,11 @@ def get_suites_paths(suites_dir_path):
 
 
 def run_squish_tests(suites_list,xml3_reports_path,html_reports_path):
-    #squish_server = os.path.join(SQUISH_BIN_FOLDER_PATH, "squishserver")
+    squish_server = os.path.join(SQUISH_BIN_FOLDER_PATH, "squishserver")
     squish_runner = os.path.join(SQUISH_BIN_FOLDER_PATH, "squishrunner")
 
     # Run squish server
-    #subprocess.Popen([squish_server])
+    subprocess.Popen([squish_server],"--verbose","--logfile C:\\reports")
 
     print(f"\nSUCCESSFULLY ADDED SUITES LIST: {suites_list}\n")
     for suite in suites_list:
