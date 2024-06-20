@@ -3,7 +3,6 @@ import shutil
 import sys
 import subprocess
 import configparser
-import psutil
 import parse_junit as add_skipped_to_junit_report
 
 SQUISH_BIN_FOLDER_PATH = "C:\\Squish_for_Qt_6.7.2\\bin"
