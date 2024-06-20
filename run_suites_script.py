@@ -3,7 +3,7 @@ import shutil
 import sys
 import subprocess
 import configparser
-import parse_junit as add_skipped_to_junit_report
+#import parse_junit as add_skipped_to_junit_report
 
 SQUISH_BIN_FOLDER_PATH = "C:\\Squish_for_Qt_6.7.2\\bin"
 SUITES_DIR_PATH = "C:\\Squish_tests_suites\\autotests_dei_ui_local"
